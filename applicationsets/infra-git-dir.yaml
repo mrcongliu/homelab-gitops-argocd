@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: infra-git-dir
+  namespace: argocd
+spec:
+  goTemplate: true
+  generators:
+    - git:
+        repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+        revision: HEAD
+        directories:
+          - path: infra/*
+
+  template:
+    metadata:
+      name: 'infra-{{path.basename}}'
+    spec:
+      project: platform
+      source:
+        repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'infra-{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
