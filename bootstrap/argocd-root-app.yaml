@@ -4,7 +4,7 @@ metadata:
   name: argocd-root
   namespace: argocd
 spec:
-  project: platform
+  project: default
   source:
     repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
     targetRevision: HEAD
