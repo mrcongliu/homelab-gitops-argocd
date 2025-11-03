@@ -8,13 +8,13 @@ spec:
   source:
     repoURL: https://kubernetes.github.io/ingress-nginx
     chart: ingress-nginx
-    targetRevision: 4.13.3 # ✅ Updated to latest
+    targetRevision: 4.11.8 # 👈 Downgraded chart version
     helm:
       releaseName: ingress-nginx
       values: |
         controller:
           service:
-            type: NodePort        # ✅ Still needed for your homelab
+            type: NodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
