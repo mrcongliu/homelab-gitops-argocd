@@ -13,7 +13,7 @@ spec:
 
   template:
     metadata:
-      name: "infra-{{path.basename}}"
+      name: "{{path.basename}}"
     spec:
       project: platform
       source:
