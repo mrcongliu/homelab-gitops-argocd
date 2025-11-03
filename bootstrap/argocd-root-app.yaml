@@ -6,7 +6,7 @@ metadata:
 spec:
   project: platform
   source:
-    repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+    repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
     targetRevision: HEAD
     path: root
   destination:

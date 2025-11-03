@@ -6,16 +6,16 @@ metadata:
 spec:
   description: Homelab GitOps platform project
   sourceRepos:
-    - 'https://github.com/example/homelab-gitops-argocd.git'   # <-- CHANGE ME
+    - "https://github.com/mrcongliu/homelab-gitops-argocd.git" # <-- CHANGE ME
   destinations:
-    - namespace: '*'
+    - namespace: "*"
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
-    - group: ''
+    - group: ""
       kind: Namespace
-    - group: 'rbac.authorization.k8s.io'
+    - group: "rbac.authorization.k8s.io"
       kind: ClusterRole
-    - group: 'rbac.authorization.k8s.io'
+    - group: "rbac.authorization.k8s.io"
       kind: ClusterRoleBinding
   namespaceResourceBlacklist:
     - group: ""

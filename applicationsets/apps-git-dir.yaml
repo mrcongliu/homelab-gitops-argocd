@@ -7,25 +7,25 @@ spec:
   goTemplate: true
   generators:
     - git:
-        repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+        repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
         revision: HEAD
         directories:
           - path: apps/*
 
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: "{{path.basename}}"
       annotations:
         notifications.argoproj.io/subscribe.on-sync-succeeded: "true"
     spec:
       project: platform
       source:
-        repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+        repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
         targetRevision: HEAD
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: "{{path.basename}}"
       syncPolicy:
         automated:
           prune: true

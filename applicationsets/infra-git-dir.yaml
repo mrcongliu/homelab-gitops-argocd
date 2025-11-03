@@ -7,23 +7,23 @@ spec:
   goTemplate: true
   generators:
     - git:
-        repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+        repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
         revision: HEAD
         directories:
           - path: infra/*
 
   template:
     metadata:
-      name: 'infra-{{path.basename}}'
+      name: "infra-{{path.basename}}"
     spec:
       project: platform
       source:
-        repoURL: https://github.com/example/homelab-gitops-argocd.git   # <-- CHANGE ME
+        repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
         targetRevision: HEAD
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'infra-{{path.basename}}'
+        namespace: "infra-{{path.basename}}"
       syncPolicy:
         automated:
           prune: true
