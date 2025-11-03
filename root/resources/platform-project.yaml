@@ -7,7 +7,7 @@ spec:
   description: Homelab GitOps platform project
   sourceRepos:
     - "https://github.com/mrcongliu/homelab-gitops-argocd.git" # <-- CHANGE ME
-    - https://kubernetes.github.io/ingress-nginx # Allow ingress-nginx helm chart
+    - "https://github.com/kubernetes/ingress-nginx" # Allow ingress-nginx helm chart
   destinations:
     - namespace: "*"
       server: https://kubernetes.default.svc
