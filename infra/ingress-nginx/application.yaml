@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
   source:
-    repoURL: https://kubernetes.github.io/ingress-nginx
+    repoURL: https://github.com/kubernetes/ingress-nginx
     targetRevision: 4.11.1
     chart: ingress-nginx
     helm:
