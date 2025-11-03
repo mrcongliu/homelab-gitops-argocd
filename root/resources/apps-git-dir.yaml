@@ -4,7 +4,6 @@ metadata:
   name: apps-git-dir
   namespace: argocd
 spec:
-  goTemplate: true
   generators:
     - git:
         repoURL: https://github.com/mrcongliu/homelab-gitops-argocd.git # <-- CHANGE ME
